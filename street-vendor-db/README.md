@@ -4,7 +4,7 @@
 
 ```bash
 npm install
-cp .env.example .env  # Add your actual Mongo URI
+cp .env  # Add your actual Mongo URI
 node server.js        # Start the backend server
 ```
 
