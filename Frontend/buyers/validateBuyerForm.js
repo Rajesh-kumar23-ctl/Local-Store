@@ -1,4 +1,3 @@
-
 function validateBuyerForm() {
   const name = document.getElementById("buyer-name").value.trim();
   const email = document.getElementById("buyer-email").value.trim();
@@ -6,14 +5,19 @@ function validateBuyerForm() {
   const place = document.getElementById("place").value.trim();
   const city = document.getElementById("city").value.trim();
   const state = document.getElementById("state").value.trim();
-  const products = document.getElementById("product_name").value.trim();
-  if (!name || !pin || !place || !city || !state || products.length === 0) {
+
+  // Collect all selected products from checkboxes
+  const products = Array.from(document.querySelectorAll(".product-checkbox:checked"))
+    .map(cb => cb.value);
+
+  if (!name || !email || !pin || !place || !city || !state || products.length === 0) {
     alert("All buyer fields are required.");
     return false;
   }
-  return { 
+  return {
     name,
+    email,
     location: { pin, place, city, state },
-    products 
+    products
   };
 }
