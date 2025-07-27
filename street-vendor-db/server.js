@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const multer = require('multer');
+const router = express.Router();
 
 dotenv.config();
 const app = express();
@@ -83,7 +85,20 @@ app.get('/api/reviews', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/'); // Specify the destination folder
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '-' + file.originalname); // Specify the filename
+  }
+});
+const upload = multer({ storage: storage });
+// Define your routes here
+router.post('/upload', upload.single('file'), (req, res) => {
+  res.send('File uploaded successfully');
+});
+module.exports = router;
 // Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
