@@ -4,7 +4,6 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const multer = require('multer');
 const { Client } = require('@googlemaps/google-maps-services-js');
-const Razorpay = require('razorpay');
 
 dotenv.config();
 const app = express();
@@ -26,12 +25,6 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Google Maps Client
 const googleMapsClient = new Client({});
-
-// Razorpay Client
-const razorpay = new Razorpay({
-    key_id: process.env.RAZORPAY_KEY_ID,
-    key_secret: process.env.RAZORPAY_KEY_SECRET,
-});
 
 // Get Directions
 app.get('/api/directions', async (req, res) => {
