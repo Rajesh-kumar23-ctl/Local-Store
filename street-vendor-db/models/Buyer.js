@@ -6,9 +6,10 @@ const buyerSchema = new mongoose.Schema({
   phone: { type: String, required: true },
   gmail: { type: String },
   location: {
-    pincode: { type: String ,required: true},
-    city: { type: String ,required: true},
-    state: { type: String ,required: true},
+    pin:   { type: String, required: true },
+    place: { type: String, required: true },
+    city:  { type: String, required: true },
+    state: { type: String, required: true }
   },
   cart: { type: Array, default: [] },
   automaticOrder: {
