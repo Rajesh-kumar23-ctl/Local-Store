@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const multer = require('multer');
-const router = express.Router();
+const { Client } = require('@googlemaps/google-maps-services-js');
+const Razorpay = require('razorpay');
 
 dotenv.config();
 const app = express();
@@ -23,9 +24,64 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log("MongoDB connected"))
 .catch((err) => console.error("MongoDB connection error:", err));
 
-// Routes
-app.use("/api/buyers", require("./routes/buyerRoutes"));
-app.use("/api/suppliers", require("./routes/supplierRoutes"));
+// Google Maps Client
+const googleMapsClient = new Client({});
+
+// Razorpay Client
+const razorpay = new Razorpay({
+    key_id: process.env.RAZORPAY_KEY_ID,
+    key_secret: process.env.RAZORPAY_KEY_SECRET,
+});
+
+// Get Directions
+app.get('/api/directions', async (req, res) => {
+    const { buyerId, supplierId } = req.query;
+
+    try {
+        const buyer = await Buyer.findById(buyerId);
+        const supplier = await Supplier.findById(supplierId);
+
+        if (!buyer || !supplier) {
+            return res.status(404).json({ error: 'Buyer or Supplier not found' });
+        }
+
+        const buyerAddress = `${buyer.location.pin}, ${buyer.location.city}, ${buyer.location.state}`;
+        const supplierAddress = `${supplier.location.pin}, ${supplier.location.city}, ${supplier.location.state}`;
+
+        const response = await googleMapsClient.directions({
+            params: {
+                origin: buyerAddress,
+                destination: supplierAddress,
+                key: process.env.GOOGLE_MAPS_API_KEY,
+            },
+            timeout: 1000, // milliseconds
+        });
+
+        res.json(response.data);
+    } catch (error) {
+        console.error('Error fetching directions:', error);
+        res.status(500).json({ error: 'Error fetching directions' });
+    }
+});
+
+// Create Razorpay Order
+app.post('/api/create-order', async (req, res) => {
+    const { amount, currency } = req.body;
+
+    const options = {
+        amount: amount * 100, // Amount in paise
+        currency: currency,
+        receipt: 'receipt#1',
+    };
+
+    try {
+        const order = await razorpay.orders.create(options);
+        res.json(order);
+    } catch (error) {
+        console.error('Error creating order:', error);
+        res.status(500).json({ error: 'Error creating order' });
+    }
+});
 
 // ===== PUT & DELETE for Supplier =====
 app.put('/api/suppliers/:id', async (req, res) => {
@@ -85,6 +141,7 @@ app.get('/api/reviews', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'uploads/'); // Specify the destination folder
@@ -95,11 +152,10 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 // Define your routes here
-router.post('/upload', upload.single('file'), (req, res) => {
+app.post('/api/upload', upload.single('file'), (req, res) => {
   res.send('File uploaded successfully');
 });
-module.exports = router;
+
 // Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-

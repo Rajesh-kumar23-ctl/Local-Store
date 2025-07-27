@@ -6,6 +6,7 @@ function validateBuyerForm() {
   const place = document.getElementById("place").value.trim();
   const city = document.getElementById("city").value.trim();
   const state = document.getElementById("state").value.trim();
+  const products = document.getElementById("product_name").value.trim();
   if (!name || !pin || !place || !city || !state || products.length === 0) {
     alert("All buyer fields are required.");
     return false;
