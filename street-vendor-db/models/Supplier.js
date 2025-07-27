@@ -11,6 +11,11 @@ const supplierSchema = new mongoose.Schema({
     city:  { type: String, required: true },
     state: { type: String, required: true }
   },
+  productImage: {
+  type: String,
+  required: false, // optional image
+},
+
   itemList: [{
     itemName: String,
     price: Number,
