@@ -13,7 +13,7 @@ const supplierSchema = new mongoose.Schema({
   },
   productImage: {
   type: String,
-  required: false, // optional image
+  required: true, // optional image
 },
 
   itemList: [{
