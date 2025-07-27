@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LocalMarket - Supporting Local Vendors & Small Businesses</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#57b5e7',secondary:'#8dd3c7'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+.hero-bg {
+background-image: url('https://readdy.ai/api/search-image?query=modern%20minimalist%20marketplace%20interior%20with%20soft%20gradient%20light%20blue%20to%20white%20background%2C%20clean%20and%20simple%20design%2C%20plenty%20of%20white%20space%20on%20the%20left%20side%20for%20text%2C%20subtle%20abstract%20shapes%2C%20professional%20business%20environment%20with%20high%20key%20lighting&width=1920&height=800&seq=hero002&orientation=landscape');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+position: relative;
+}
+
+.hero-bg::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+pointer-events: none;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Header -->
+<header class="bg-white shadow-sm border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-8">
+<div class="font-['Pacifico'] text-2xl text-primary">LocalMarket</div>
+<nav class="hidden md:flex space-x-8">
+<a href="#" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+<a href="#" class="text-gray-700 hover:text-primary transition-colors">Categories</a>
+<a href="#" class="text-gray-700 hover:text-primary transition-colors">Local Vendors</a>
+<a href="#" class="text-gray-700 hover:text-primary transition-colors">Community</a>
+<a href="#" class="text-gray-700 hover:text-primary transition-colors">About</a>
+</nav>
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative">
+<input type="text" placeholder="Search local products..." class="w-80 pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+<div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center">
+<i class="ri-search-line text-gray-400"></i>
+</div>
+</div>
+<button class="relative p-2 text-gray-600 hover:text-primary transition-colors">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-shopping-cart-line"></i>
+</div>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+</button>
+<button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap !rounded-button">Sign In</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-bg min-h-[600px] flex items-center">
+<div class="w-full relative z-10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-2xl">
+<h1 class="text-5xl font-bold text-gray-900 mb-6">Empowering Local Vendors & Small Businesses</h1>
+<p class="text-xl text-gray-700 mb-8">Connect with your community, discover amazing local products, and support small businesses in your neighborhood. Join group orders, schedule deliveries, and build lasting relationships with local vendors.</p>
+<div class="flex space-x-4">
+<button class="bg-primary text-white px-8 py-3 rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap !rounded-button">Start Shopping</button>
+<button class="border border-gray-300 text-gray-700 px-8 py-3 rounded-button hover:bg-gray-50 transition-colors whitespace-nowrap !rounded-button">Become a Vendor</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Why Choose LocalMarket?</h2>
+<p class="text-xl text-gray-600">Supporting local businesses with modern e-commerce solutions</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center mb-6">
+<i class="ri-store-2-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Local Vendor Network</h3>
+<p class="text-gray-600">Connect with verified local vendors and small businesses in your area. Support your community while getting fresh, quality products.</p>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-secondary bg-opacity-10 rounded-lg flex items-center justify-center mb-6">
+<i class="ri-group-line text-secondary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Community Group Orders</h3>
+<p class="text-gray-600">Join or create group orders with neighbors to get bulk discounts and reduce delivery costs. Build community connections.</p>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+<i class="ri-calendar-schedule-line text-orange-500 text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Scheduled Delivery</h3>
+<p class="text-gray-600">Choose your preferred delivery time slots. Track your orders in real-time and get notifications about delivery status.</p>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+<i class="ri-star-line text-green-500 text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Rating & Reviews</h3>
+<p class="text-gray-600">Read authentic reviews from verified buyers. Rate products and vendors to help others make informed decisions.</p>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+<i class="ri-secure-payment-line text-purple-500 text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Secure Payments</h3>
+<p class="text-gray-600">Multiple payment options including UPI, cards, and wallets. Secure transactions with buyer protection guarantee.</p>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+<i class="ri-map-pin-line text-red-500 text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Hyperlocal Discovery</h3>
+<p class="text-gray-600">Discover products and vendors based on your location. Get personalized recommendations from your neighborhood.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Categories -->
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Shop by Category</h2>
+<p class="text-xl text-gray-600">Explore products from local vendors in your area</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="group cursor-pointer">
+<div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=fresh%20organic%20vegetables%20and%20fruits%20displayed%20in%20a%20clean%20modern%20market%20setting%20with%20natural%20lighting%20and%20white%20background&width=200&height=200&seq=cat001&orientation=squarish" alt="Fresh Produce" class="w-16 h-16 mx-auto mb-4 rounded-lg object-cover object-top">
+<h3 class="font-semibold text-gray-900 mb-2">Fresh Produce</h3>
+<p class="text-sm text-gray-600">Organic fruits & vegetables</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=handmade%20artisan%20crafts%20and%20handcrafted%20items%20displayed%20beautifully%20with%20clean%20white%20background%20and%20soft%20lighting&width=200&height=200&seq=cat002&orientation=squarish" alt="Handmade Crafts" class="w-16 h-16 mx-auto mb-4 rounded-lg object-cover object-top">
+<h3 class="font-semibold text-gray-900 mb-2">Handmade Crafts</h3>
+<p class="text-sm text-gray-600">Artisan made products</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=homemade%20baked%20goods%20and%20fresh%20bread%20displayed%20in%20a%20warm%20bakery%20setting%20with%20clean%20white%20background&width=200&height=200&seq=cat003&orientation=squarish" alt="Bakery Items" class="w-16 h-16 mx-auto mb-4 rounded-lg object-cover object-top">
+<h3 class="font-semibold text-gray-900 mb-2">Bakery Items</h3>
+<p class="text-sm text-gray-600">Fresh baked goods</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=local%20specialty%20food%20products%20and%20gourmet%20items%20arranged%20elegantly%20with%20clean%20white%20background%20and%20professional%20lighting&width=200&height=200&seq=cat004&orientation=squarish" alt="Local Specialties" class="w-16 h-16 mx-auto mb-4 rounded-lg object-cover object-top">
+<h3 class="font-semibold text-gray-900 mb-2">Local Specialties</h3>
+<p class="text-sm text-gray-600">Unique regional products</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between mb-12">
+<div>
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Products</h2>
+<p class="text-xl text-gray-600">Popular items from local vendors</p>
+</div>
+<button class="text-primary hover:text-primary-dark transition-colors">View All Products</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=fresh%20organic%20tomatoes%20and%20vegetables%20in%20a%20basket%20with%20natural%20lighting%20and%20clean%20white%20background%20product%20photography%20style&width=300&height=200&seq=prod001&orientation=landscape" alt="Organic Tomatoes" class="w-full h-48 object-cover object-top">
+<div class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded-full text-xs">Fresh</div>
+</div>
+<div class="p-4">
+<h3 class="font-semibold text-gray-900 mb-2">Organic Tomatoes</h3>
+<p class="text-sm text-gray-600 mb-2">Green Valley Farm</p>
+<div class="flex items-center mb-2">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-line text-sm"></i>
+</div>
+<span class="text-sm text-gray-500 ml-2">(24 reviews)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-lg font-bold text-gray-900">$4.99/kg</span>
+<button class="bg-primary text-white px-3 py-1 rounded-button text-sm hover:bg-opacity-90 transition-colors whitespace-nowrap !rounded-button">Add to Cart</button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=handmade%20wooden%20cutting%20board%20and%20kitchen%20utensils%20crafted%20by%20artisan%20with%20clean%20white%20background%20product%20photography&width=300&height=200&seq=prod002&orientation=landscape" alt="Handmade Cutting Board" class="w-full h-48 object-cover object-top">
+<div class="absolute top-3 right-3 bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Handmade</div>
+</div>
+<div class="p-4">
+<h3 class="font-semibold text-gray-900 mb-2">Handmade Cutting Board</h3>
+<p class="text-sm text-gray-600 mb-2">Artisan Woodworks</p>
+<div class="flex items-center mb-2">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-fill text-sm"></i>
+</div>
+<span class="text-sm text-gray-500 ml-2">(18 reviews)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-lg font-bold text-gray-900">$29.99</span>
+<button class="bg-primary text-white px-3 py-1 rounded-button text-sm hover:bg-opacity-90 transition-colors whitespace-nowrap !rounded-button">Add to Cart</button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=fresh%20baked%20sourdough%20bread%20and%20pastries%20from%20local%20bakery%20with%20warm%20lighting%20and%20clean%20white%20background&width=300&height=200&seq=prod003&orientation=landscape" alt="Sourdough Bread" class="w-full h-48 object-cover object-top">
+<div class="absolute top-3 right-3 bg-orange-500 text-white px-2 py-1 rounded-full text-xs">Fresh Baked</div>
+</div>
+<div class="p-4">
+<h3 class="font-semibold text-gray-900 mb-2">Sourdough Bread</h3>
+<p class="text-sm text-gray-600 mb-2">Corner Bakery</p>
+<div class="flex items-center mb-2">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-line text-sm"></i>
+</div>
+<span class="text-sm text-gray-500 ml-2">(31 reviews)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-lg font-bold text-gray-900">$6.50</span>
+<button class="bg-primary text-white px-3 py-1 rounded-button text-sm hover:bg-opacity-90 transition-colors whitespace-nowrap !rounded-button">Add to Cart</button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=local%20honey%20jars%20and%20natural%20bee%20products%20arranged%20beautifully%20with%20clean%20white%20background%20and%20golden%20lighting&width=300&height=200&seq=prod004&orientation=landscape" alt="Local Honey" class="w-full h-48 object-cover object-top">
+<div class="absolute top-3 right-3 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs">Local</div>
+</div>
+<div class="p-4">
+<h3 class="font-semibold text-gray-900 mb-2">Raw Local Honey</h3>
+<p class="text-sm text-gray-600 mb-2">Meadow Bee Farm</p>
+<div class="flex items-center mb-2">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-fill text-sm"></i>
+<i class="ri-star-fill text-sm"></i>
+</div>
+<span class="text-sm text-gray-500 ml-2">(42 reviews)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-lg font-bold text-gray-900">$12.99</span>
+<button class="bg-primary text-white px-3 py-1 rounded-button text-sm hover:bg-opacity-90 transition-colors whitespace-nowrap !rounded-button">Add to Cart</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Features -->
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Community-Driven Shopping</h2>
+<p class="text-xl text-gray-600">Connect with neighbors and save together</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<div class="space-y-8">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
+<i class="ri-group-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Group Buying Power</h3>
+<p class="text-gray-600">Join or create group orders with neighbors to unlock bulk discounts and reduce delivery costs. The more people join, the better the deals!</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 bg-secondary bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
+<i class="ri-chat-3-line text-secondary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Neighborhood Recommendations</h3>
+<p class="text-gray-600">Get personalized product recommendations from people in your area. Share reviews and discover hidden gems from local vendors.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+<i class="ri-calendar-event-line text-orange-500 text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Flexible Scheduling</h3>
+<p class="text-gray-600">Choose delivery slots that work for your schedule. Coordinate with group members to optimize delivery times and reduce environmental impact.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=diverse%20group%20of%20people%20shopping%20together%20in%20a%20modern%20local%20market%20with%20smartphones%20showing%20group%20buying%20app%20interface%20clean%20white%20background&width=600&height=400&seq=community001&orientation=landscape" alt="Community Shopping" class="w-full rounded-xl shadow-lg object-cover object-top">
+</div>
+</div>
+</div>
+</section>
+<!-- Vendor Signup CTA -->
+<section class="py-20 bg-gradient-to-r from-primary to-secondary">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-4xl font-bold text-white mb-4">Are You a Local Vendor?</h2>
+<p class="text-xl text-white mb-8 max-w-2xl mx-auto">Join our platform and reach more customers in your community. Get access to group orders, scheduled deliveries, and community feedback.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-white text-primary px-8 py-3 rounded-button hover:bg-gray-50 transition-colors whitespace-nowrap !rounded-button">Start Selling Today</button>
+<button class="border-2 border-white text-white px-8 py-3 rounded-button hover:bg-white hover:text-primary transition-colors whitespace-nowrap !rounded-button">Learn More</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<div class="font-['Pacifico'] text-2xl text-primary mb-4">LocalMarket</div>
+<p class="text-gray-400 mb-6">Connecting communities with local vendors and small businesses. Supporting local economy, one order at a time.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">For Buyers</h3>
+<ul class="space-y-2 text-gray-400">
+<li><a href="#" class="hover:text-white transition-colors">How it Works</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Group Orders</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Delivery Scheduling</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Community Features</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Payment Options</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">For Vendors</h3>
+<ul class="space-y-2 text-gray-400">
+<li><a href="#" class="hover:text-white transition-colors">Become a Vendor</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Seller Dashboard</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Order Management</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Analytics</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Support</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Support</h3>
+<ul class="space-y-2 text-gray-400">
+<li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Refund Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+<p>&copy; 2025 LocalMarket. All rights reserved. Built with ❤️ for local communities.</p>
+</div>
+</div>
+</footer>
+<script id="cart-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+const cartButtons = document.querySelectorAll('button:contains("Add to Cart")');
+const cartCounter = document.querySelector('.absolute.-top-1.-right-1');
+let cartCount = 3;
+cartButtons.forEach(button => {
+if (button.textContent.includes('Add to Cart')) {
+button.addEventListener('click', function() {
+cartCount++;
+cartCounter.textContent = cartCount;
+// Visual feedback
+button.textContent = 'Added!';
+button.classList.add('bg-green-500');
+button.classList.remove('bg-primary');
+setTimeout(() => {
+button.textContent = 'Add to Cart';
+button.classList.remove('bg-green-500');
+button.classList.add('bg-primary');
+}, 1500);
+});
+}
+});
+});
+</script>
+<script id="search-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+const searchInput = document.querySelector('input[placeholder="Search local products..."]');
+searchInput.addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+const searchTerm = this.value.trim();
+if (searchTerm) {
+// Simulate search functionality
+console.log('Searching for:', searchTerm);
+// In a real app, this would trigger a search API call
+}
+}
+});
+});
+</script>
+<script id="smooth-scrolling">
+document.addEventListener('DOMContentLoaded', function() {
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href').substring(1);
+const targetElement = document.getElementById(targetId);
+if (targetElement) {
+targetElement.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>
